@@ -85,7 +85,7 @@ class StudentList{
              
         }
         
-        void addStudentCourse(){
+        void addStudentCourse(CoursesList &cL){
             
             if (checkStudent()){
                 cout << "No student listed yet.\n";
@@ -103,7 +103,8 @@ class StudentList{
                 vector <string> courses = s.getCourses();
                 
                 if (id == s.getStudentId()){
-                    s.addCourse();
+                    vector<Course> courseOptions = cL.getCourses();
+                    s.addCourse(courseOptions);
                     return;
                 }
             }
@@ -159,11 +160,11 @@ class StudentList{
                     }
                     for(int i = 0; i < maxCourse; i++){
                         getline(file, gS);
-                        g.push_back(atof(gS.c_str()));
+                        g.push_back(stod(gS));
                     }
                     
                     getline(file, line);
-                    Student s(sn, sid, atof(a.c_str()), cT, g, atoi(nOCT.c_str()));
+                    Student s(sn, sid, stod(a), cT, g, stoi(nOCT));
                     students.push_back(s);
                     cT.clear();
                     g.clear();

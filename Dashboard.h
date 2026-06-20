@@ -41,6 +41,7 @@ class Dashboard{
                 cout << "8. Exit\n";
                 cout << "Choose: ";
                 cin >> option;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');    
                 
                 if (option == "1"){
                     cList.addCourse();
@@ -58,7 +59,7 @@ class Dashboard{
                 }
                 
                 else if (option == "4"){
-                    sList.addStudentCourse();
+                    sList.addStudentCourse(cList);
                     save();
                 }
                 
