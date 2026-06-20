@@ -40,7 +40,6 @@ class CoursesList{
             string name, faculty;
             double units;
             
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             
             cout << "Course name: ";
             getline(cin, name);
@@ -57,6 +56,7 @@ class CoursesList{
             
             cout << "How many units: ";
             cin >> units;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             
             Course c(name, faculty, units);
             courses.push_back(c);

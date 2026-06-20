@@ -1,7 +1,7 @@
 Zeyhtird Gomez
 2025-00411-SR-0
 6
-1.25
+1.33333
 Discrete Mathematics
 Computer Programming 2
 Readings in Philippine History

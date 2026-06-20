@@ -45,18 +45,15 @@ public:
         cout << "Course name: ";
         getline(cin, courseName);
 
-        cout << "Courses currently taking: "<< numberOfCoursesTaking <<endl;
-        
-        for (size_t i = 0; i < numberOfCoursesTaking; ++i)
+        for (size_t i = 0; i < coursesTaking.size(); ++i)
         {
-            cout << coursesTaking.at(i) << endl;
             if (courseName == coursesTaking.at(i))
             {
-                cout << "You are already enrolled in this course.\n";
+                cout << "Course already listed.\n";
                 return;
             }
-        } // Check if the student is already enrolled in the course
-
+        }
+        
         for (size_t i = 0; i < cL.size(); ++i)
         {
             if (courseName == cL.at(i).getCourseName())

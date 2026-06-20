@@ -25,8 +25,6 @@ class StudentList{
             string studentName;
             string studentId;
             
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            
             cout << "Enter Student ID: ";
             getline(cin, studentId);
             
@@ -45,9 +43,7 @@ class StudentList{
         }
         
         void updateStudentGrade(){
-            
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            
+                  
             if (checkStudent()){
                 cout << "No student listed yet.\n";
                 return;
@@ -72,6 +68,7 @@ class StudentList{
                         if (cName == courses.at(k)){
                             cout << "Grades: ";
                             cin >> g;
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
                         
                             s.updateGrade(k, g);
                             s.getAverage();
@@ -79,9 +76,9 @@ class StudentList{
                         }
                         j++;
                     }
-                    cout << "Student not found.\n";
                 }
             }
+            cout << "Student not found.\n";
              
         }
         
@@ -91,9 +88,7 @@ class StudentList{
                 cout << "No student listed yet.\n";
                 return;
             }
-            
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            
+                        
             string id;
             cout << "Enter Student ID: ";
             getline(cin, id);
@@ -108,6 +103,7 @@ class StudentList{
                     return;
                 }
             }
+
             cout << "Student not found.\n";
         }
         
@@ -189,7 +185,6 @@ class StudentList{
             string id;
             int numberOfCoursesTaking;
             
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Enter Student ID: ";
             getline(cin, id);
             
